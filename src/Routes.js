@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import StartMatch from "./pages/StartMatch";
+import PickPlayers from "./pages/PickPlayers";
 
 
 export default () => {
@@ -14,6 +15,7 @@ export default () => {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/start-match" element={<StartMatch/>}/>
+                <Route path="/pick-players" element={<PickPlayers/>}/>
             </Routes>
         </BrowserRouter>
     )

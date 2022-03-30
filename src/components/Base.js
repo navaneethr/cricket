@@ -25,6 +25,15 @@ export const FlexColumnContainer = styled.div`
   height: 100vh;
 `;
 
+export const FlexRowContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+`;
+
 export const PrimaryButton = styled.button`
   border: 1px solid #999999;
   padding: ${theme.space.xs};
