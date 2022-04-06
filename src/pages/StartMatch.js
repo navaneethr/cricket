@@ -7,8 +7,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import {selectMatch} from "../redux/matchReducer/matchSlice";
 import {
     changeTeamAName,
-    changeTeamBName
+    changeTeamBName,
+    changeMatchType
 } from '../redux/matchReducer/matchSlice';
+import SwitchBoard from "../components/Switch";
 
 export default () => {
     const navigate = useNavigate();
@@ -23,6 +25,11 @@ export default () => {
                 <Text fontWeight="bold" fontSize="24px">v/s</Text>
                 <LargeInput value={match.teamB.name} placeholder="Team B" onChange={(e) => dispatch(changeTeamBName(e.target.value))}/>
             </div>
+            <SwitchBoard
+                options={[{label: 'Test', value: 'test'}, {label: 'ODI', value: 'odi'}, {label: 'T20', value: 't20'}, {label: '10 Over', value: 'ten'}]}
+                value={match.matchType}
+                onClick={(type) => dispatch(changeMatchType(type))}
+            />
             <PrimaryButton onClick={() => {navigate('/pick-players')}}>Go to Team Builder</PrimaryButton>
         </FlexColumnContainer>
     );
